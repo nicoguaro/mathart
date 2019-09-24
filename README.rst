@@ -5,6 +5,9 @@
 Collection of scripts to create cool visualizations related to math.
 
 .. image:: scripts/lissajous/lissajous.gif
+  :width: 400 px
+  :alt: Quasi-Lissajous figures.
+  :align:  center
 
 License
 -------
