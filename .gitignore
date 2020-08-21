@@ -1,3 +1,5 @@
+### Python ###
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -102,3 +104,15 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+### Visual Studio Code ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+### Visual Studio Code Patch ###
+# Ignore all local history of files
+.history
