@@ -3,12 +3,16 @@
 """
 Animate the Euler line for random triangles.
 
-@author: Nicolas Guarin-Zapata
-@date: September 2019
+@author: Nicolás Guarín-Zapata
 """
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import matplotlib.font_manager as fm
+
+fpath = "../../fonts/tex-gyre-adventor/texgyreadventor-regular.otf"
+prop = fm.FontProperties(fname=fpath)
 
 
 def plot_tri(ang, ax=None):
@@ -84,10 +88,10 @@ def update(cont):
     plt.axis("off")
     plt.xlim(-1.2, 1.2)
     plt.ylim(-1.2, 1.2)
-    plt.suptitle("Euler line", fontsize=18)
+    plt.suptitle("Euler line", fontsize=18, fontproperties=prop)
     plt.text(1.2, -1.2, "@nicoguaro", fontsize=14,
                  horizontalalignment='right',
-                 fontname="Century Gothic", alpha=0.7)
+                 fontproperties=prop, alpha=0.7)
     return None
 
 

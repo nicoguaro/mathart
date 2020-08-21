@@ -30,8 +30,7 @@ other words, each generation is a pure function of the preceding one).
 The rules continue to be applied repeatedly to create further
 generations.
 
-@author: Nicolas Guarin-Zapata
-@date: September 2019
+@author: Nicolás Guarín-Zapata
 """
 import numpy as np
 from numpy.random import randint
