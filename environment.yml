@@ -1,0 +1,12 @@
+name: mathart
+channels:
+ - conda-forge
+dependencies:
+ - conda
+ - python>=3.6
+ - numpy
+ - scipy
+ - matplotlib
+ - imagemagick
+ - mayavi
+ - pyvista
