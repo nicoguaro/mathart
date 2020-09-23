@@ -10,6 +10,10 @@ The parameterization used for the curves is the azimuth angle.
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import matplotlib.font_manager as fm
+
+fpath = "../../fonts/tex-gyre-adventor/texgyreadventor-regular.otf"
+prop = fm.FontProperties(fname=fpath)
 
 
 def update(k, u, f1, g1, nx=5, ny=5, dx=0.5, dy=0.5, colors=None,
@@ -96,9 +100,9 @@ def update(k, u, f1, g1, nx=5, ny=5, dx=0.5, dy=0.5, colors=None,
     _, x_max = ax.get_xlim()
     y_min, _ = ax.get_ylim()
     if name:
-        plt.text(x_max, y_min - 2*dy, "@nicoguaro", fontsize=30,
+        plt.text(x_max, y_min - 2*dy, "@nicoguaro", fontsize=20,
                  horizontalalignment='right',
-                 fontname="Century Gothic", alpha=0.7)
+                 fontproperties=prop, alpha=0.7)
     return None
 
 
@@ -173,6 +177,6 @@ if __name__ == "__main__":
     fig = plt.figure(figsize=(8, 8))
     ani = animation.FuncAnimation(fig, update, range(0, npts, 10), repeat=False,
                                   fargs=(u, f, g, nx, ny, dx, dy, None, 
-                                         f2, g2, False, True, True))
+                                         f2, g2, True, True, True))
     ani.save("lissajous.gif", writer='imagemagick', dpi=100)
     plt.show()

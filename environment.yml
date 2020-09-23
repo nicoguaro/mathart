@@ -3,11 +3,15 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python>3.6
-  - numpy
-  - scipy
-  - matplotlib
-  - spyder
-  - pip
-  - pip:
-    - mplcyberpunk
+ - conda
+ - python>=3.6
+ - numpy
+ - scipy
+ - matplotlib
+ - mayavi
+ - pyvista
+ - ffmpeg
+ - spyder
+ - pip
+ - pip:
+   - mplcyberpunk

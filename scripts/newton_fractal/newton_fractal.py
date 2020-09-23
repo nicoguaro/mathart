@@ -4,11 +4,10 @@ Newton fractal for the equation
 
     x**3 + 1
 
-
 Currently, it is quite slow since it is using Python loops instead
 of vectorization of the operations.
 
-Author: Nicolas Guarin Zapata
+@author: Nicolás Guarín-Zapata
 """
 
 import numpy as np

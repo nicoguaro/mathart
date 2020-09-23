@@ -4,6 +4,8 @@ Illustration of the heat equation
 Solve the heat equation using finite differences and Forward Euler.
 
 Based on: https://commons.wikimedia.org/wiki/File:Heat_eqn.gif
+
+@author: Nicolás Guarín-Zapata
 """
 import numpy as np
 from scipy.ndimage import gaussian_filter
@@ -129,7 +131,6 @@ if __name__ == "__main__":
                 print(cont)
                 mlab.savefig("{}_{n:03d}.png".format(fname, n=cont))
             yield
-
 
     anim()
     mlab.show()
