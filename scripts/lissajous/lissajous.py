@@ -6,7 +6,6 @@ Lissajous figures for closed curves
 The parameterization used for the curves is the azimuth angle.
 
 @author: Nicolás Guarín-Zapata
-@date: September 2019
 """
 import numpy as np
 import matplotlib.pyplot as plt
@@ -14,7 +13,7 @@ import matplotlib.animation as animation
 
 
 def update(k, u, f1, g1, nx=5, ny=5, dx=0.5, dy=0.5, colors=None,
-                f2=None, g2=None, name=False, guides=False, tracer=False):
+                f2=None, g2=None, name=True, guides=False, tracer=False):
     """Update the axes for the new frame
 
     Parameters
