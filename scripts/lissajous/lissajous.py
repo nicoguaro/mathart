@@ -66,8 +66,10 @@ def update(k, u, f1, g1, nx=5, ny=5, dx=0.5, dy=0.5, colors=None,
     for row in range(1, nx + 1):
         for col in range(1, nx + 1):
             if row == 1:
-                x = f(col*u) + (2 + dx)*col
-                y = g(col*u)
+                # x = f(col*u) + (2 + dx)*col
+                # y = g(col*u)
+                x = f(u + col*np.pi/5) + (2 + dx)*col
+                y = g(u + col*np.pi/5)
                 plt.plot(x, y, lw=1, color=colors[col%ncolors], zorder=4)
                 if tracer:
                     plt.plot(x[k - 1], y[k - 1], marker="o", mfc="#D9D9D9",
@@ -78,8 +80,10 @@ def update(k, u, f1, g1, nx=5, ny=5, dx=0.5, dy=0.5, colors=None,
                                zorder=3, colors="#D9D9D9", linestyles="dotted",
                                lw=0.5)
             if col == 1:
-                x = f2(row*u)
-                y = g2(row*u) - (2 + dy)*row
+                # x = f2(row*u)
+                # y = g2(row*u) - (2 + dy)*row
+                x = f2(u + row*np.pi/5)
+                y = g2(u + row*np.pi/5) - (2 + dy)*row
 
                 plt.plot(x, y, lw=1, color=colors[row%ncolors], zorder=4)
                 if tracer:
@@ -90,8 +94,10 @@ def update(k, u, f1, g1, nx=5, ny=5, dx=0.5, dy=0.5, colors=None,
                     plt.hlines(y[k - 1], x[k - 1], (2 + dx)*nx + x2[k - 1],
                                zorder=3, colors="#D9D9D9", linestyles="dotted",
                                lw=0.5)
-            x = f(col*t) + (2 + dx)*col
-            y = g2(row*t) - (2 + dy)*row
+            # x = f(col*t) + (2 + dx)*col
+            # y = g2(row*t) - (2 + dy)*row
+            x = f(t  + col*np.pi/5) + (2 + dx)*col
+            y = g2(t + row*np.pi/5) - (2 + dy)*row
             plt.plot(x, y, lw=1, color=colors[cont%ncolors], zorder=4)
             cont += 1
     plt.axis("image")
@@ -170,13 +176,13 @@ if __name__ == "__main__":
     dx = 0.5
     dy = 0.5
     npts = 501
-    u, f, g = curve_select(npts, "clover", n=2)
-    _, f2, g2 = curve_select(npts, "clover", n=3)
+    u, f, g = curve_select(npts, "butterfly", r=2)
+    _, f2, g2 = curve_select(npts, "butterfly", r=2)
     
     # Animation
     fig = plt.figure(figsize=(8, 8))
     ani = animation.FuncAnimation(fig, update, range(0, npts, 10), repeat=False,
                                   fargs=(u, f, g, nx, ny, dx, dy, None, 
                                          f2, g2, True, True, True))
-    ani.save("lissajous.gif", writer='imagemagick', dpi=100)
+    # ani.save("lissajous.gif", writer='imagemagick', dpi=100)
     plt.show()
